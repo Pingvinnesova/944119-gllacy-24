@@ -42,63 +42,82 @@
 			</ul>
 			<section>
 				<h1>Сливочное мороженое</h1>
-				<!-- <form class="filter">
-				<p class="filter-sorting">
-					<label for="sorting">Сортировка</label><br>
-						<select name="sorting" id="sorting">
+				<form class="filter" action="https://echo.htmlacademy.ru" method="post">
+					<fieldset>
+						<legend>Сортировка:</legend>
+						<select name="sorting">
 							<option value="popularity">По популярности</option>
 							<option value="cheap-first">Сначала недорогие</option>
 							<option value="expensive-first">Сначала дорогие</option>
 							<option value="fat">По жирности</option>
 						</select>
-				</p>
-				<p class="filter-price">
-					<label>Цена: 100 руб. - 500 руб.
+					</fieldset>
+					<fieldset>
+						<legend>Цена: 100 руб. – 500 руб.</legend>
+						<p>
+						<label>
 						100<input type="range" min="100" max="500">500
-					</label>
-				</p>
-				<p class="filter-fat">Жирность<br>
-					<label>
+						</label>
+						</p>
+					</fieldset>
+					<fieldset>
+						<legend>Жирность:</legend>
+						<label>
 						<input type="radio" name="fat" value="0%">
-					0%
-					</label>
-					<label>
+						0%
+						</label>
+						<label>
 						<input type="radio" name="fat" value="≤10%">
-					до 10%
-					</label>
-					<label>
+						до 10%
+						</label>
+						<label>
 						<input type="radio" name="fat" value="≤30%">
-					до 30%
-					</label>
-					<label>
+						до 30%
+						</label>
+						<label>
 						<input type="radio" name="fat" value=">30%">
-					выше 30%
-					</label>
-				</p>
-				<p class="sprinkles">
-					<label>
-						<input type="checkbox" name="chocolate" checked>
-					шоколадные
-					</label>
-					<label>
-						<input type="checkbox" name="sugar" checked>
-					сахарные присыпки
-					</label>
-					<label>
-						<input type="checkbox" name="fruits">
-					фрукты
-					</label>
-					<label>
-						<input type="checkbox" name="cyrup">
-					сироп
-					</label>
-					<label>
-						<input type="checkbox" name="jam">
-					джем
-					</label>
-				</p>
-				<input type="submit" name="filter-button" value="Применить">
-				</form> -->
+						выше 30%
+						</label>
+					</fieldset>
+					<fieldset>
+						<legend>Наполнители:</legend>
+						<ul>
+							<li class="filter-option">
+								<label>
+									<input type="checkbox" name="chocolate" checked>
+									шоколадные
+								</label>
+							</li>
+							<li class="filter-option">
+								<label>
+									<input type="checkbox" name="sugar" checked>
+									сахарные присыпки
+								</label>
+							</li>
+							<li class="filter-option">
+								<label>
+									<input type="checkbox" name="fruits">
+									фрукты
+								</label>
+							</li>
+							<li class="filter-option">
+								<label>
+									<input type="checkbox" name="cyrup">
+									сироп
+								</label>
+							</li>
+							<li class="filter-option">
+								<label>
+									<input type="checkbox" name="jam">
+									джем
+								</label>
+							</li>
+						</ul>
+					</fieldset>
+					<button class="button" type="submit">
+					Применить
+					</button>
+				</form>
 				<ul class="product-catalog">
 					<li class="catalog-item">
 						<div class="photo-item">
@@ -253,5 +272,58 @@
 				<span>Сделано в <a href="https://htmlacademy.ru">HTML Academy </a>© 2019</span>
 			</p>
 		</footer>
+		<section class="modal modal-login">
+				<h2 class="visually-hidden">Личный кабинет</h2>
+				<form class="entrance-form" action="https://echo.htmlacademy.ru" method="post">
+					<p>
+						<label class="visually-hidden" for="entrance-email">Электронная почта</label>
+						<input class="entrance-email" id="entrance-email" type="text" name="email" placeholder="Электронная почта">
+					</p>
+					<p>
+						<label class="visually-hidden" for="user-password">Пароль</label>
+						<input class="entrance-password" id="user-password" type="password" name="password" placeholder="Пароль">
+					</p>
+					<p>
+						<a class="restore" href="#">Забыли пароль?</a>
+					</p>
+					<p>
+						<a class="new-registration" href="#">Новая регистрация</a>
+					</p>
+					<button class="button" type="submit">
+					Войти
+					</button>
+				</form>
+			</section>
+			<section class="modal modal-search">
+				<h2 class="visually-hidden">Поле поиска</h2>
+				<form class="search-form" action="https://echo.htmlacademy.ru" method="get">
+					<input type="text" name="search" id="search-text" placeholder="Что ищем?">
+				</form>
+			</section>
+			<section class="cart-with-items">
+				<h2 class="visually-hidden">Товары корзины</h2>
+				<ul>
+					<li class="cart-item">
+						<button class="modal-close" type="button">
+							Закрыть
+						</button>
+						<p>Пломбир с апельсиновым джемом</p>
+						<p>1,5 кг х 200 руб.</p>
+						<p>300 руб.</p>
+					</li>
+					<li class="cart-item">
+						<button class="modal-close" type="button">
+							Закрыть
+						</button>
+						<p>Клубничный пломбир с присыпкой из белого шоколада</p>
+						<p>1,5 кг х 300 руб.</p>
+						<p>450 руб.</p>
+					</li>
+				</ul>
+				<p class="sum">Итого: 750 руб.<p>
+				<button class="button" type="submit">
+				Оформить заказ
+				</button>
+			</section>
 	</body>
 </html>
