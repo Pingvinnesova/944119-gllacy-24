@@ -2,7 +2,10 @@
 <html lang="ru">
 	<head>
 		<meta charset="utf-8">
-	<title>Магазин по продаже мороженого «Глейси»</title>
+		<title>Магазин по продаже мороженого «Глейси»</title>
+		<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;subset=cyrillic" rel="stylesheet">
+		<link href="css/normalize.css" rel="stylesheet">
+		<link href="css/styles.css" rel="stylesheet">
 	</head>
 	<body>
 		<header class="main-header">
@@ -10,9 +13,9 @@
 				<a class="main-header-logo">
 					<img src="img/logo.svg" width="154" height="64" alt="Логотип магазина мороженого «Глейси»">
 				</a>
-				<ul class="site-navigation">
+				<ul class="site-navigation list-style">
 					<li><a href="#">Каталог</a>
-						<ul class="dropdown-menu">
+						<ul class="dropdown-menu list-style">
 							<li><a href="#"><b>Новинки</b></a></li>
 							<li><a href="catalog.html">Сливочное</a></li>
 							<li><a href="#">Щербеты</a></li>
@@ -23,7 +26,7 @@
 					<li><a href="delivery.html">Доставка и оплата</a></li>
 					<li><a href="info.html">О Компании</a></li>
 				</ul>
-				<ul class="user-navigation">
+				<ul class="user-navigation list-style">
 					<li>
 						<a class="search-link" href="#">Поиск</a>
 						<div class="modal modal-search">
@@ -52,7 +55,7 @@
 								<p>
 									<a class="new-registration" href="#">Новая регистрация</a>
 								</p>
-								<button class="button" type="submit">Войти</button>
+								<button class="button button-login" type="submit">Войти</button>
 							</form>
 						</div>
 					</li>
@@ -62,33 +65,45 @@
 				</ul>
 			</nav>
 			<p class="info">
-				<span class="hours">с 10 до 20, ежедневно</span>
-				<span class="phone">8 812 450-25-25</span>
+				<span class="info-hours">с 10 до 20, ежедневно</span>
+				<span class="info-phone">8 812 450-25-25</span>
 			</p>
 		</header>
 		<main>
 			<h1 class="visually-hidden">Магазин по продаже мороженого «Глейси»</h1>
 			<section class="slider">
-				<ul>
+				<ul class="list-style">
 					<li class="slide-1">
 						<img src="img/slide-1.png" width="1045" height="881" alt="Крем-брюле и пломбир с малиновым джемом">
 						<h2>Крем-брюле и пломбир с малиновым джемом</h2>
-						<a class="button catalog-button" href="#">Давайте оба!</a>
+						<a class="button slide-button" href="#">Давайте оба!</a>
+						<li></li>
 					</li>
 					<li class="slide-2">
 						<img src="img/slide-2.png" width="1065" height="859" alt="Шоколадный пломбир и лимонный сорбет">
 						<h2>Шоколадный пломбир и лимонный сорбет</h2>
-						<a class="button catalog-button" href="#">Давайте оба!</a>
+						<a class="button slide-button" href="#">Давайте оба!</a>
 					</li>
 					<li class="slide-3">
 						<img src="img/slide-3.png" width="1079" height="854" alt="Пломбир с помадкой и клубничный щербет">
 						<h2>Пломбир с помадкой и клубничный щербет</h2>
-						<a class="button catalog-button" href="#">Давайте оба!</a>
+						<a class="button slide-button" href="#">Давайте оба!</a>
+					</li>
+				</ul>
+				<ul class="slides-switches list-style">
+					<li class="slide-radio">
+						<button class="dot">Первый слайд</button>
+					</li>
+					<li class="slide-radio">
+						<button class="dot">Второй слайд</button>
+					</li>
+					<li class="slide-radio">
+						<button class="dot">Третий слайд</button>
 					</li>
 				</ul>
 			</section>
 			<section class="promo">
-				<ul>
+				<ul class="list-style">
 					<li class="rasberries">
 						<h2>Малинки даром!</h2>
 						<p>При покупке 2 кг любого фруктового мороженого, добавим в ваш заказ банку малинового варенья бесплатно.</p>
@@ -102,7 +117,7 @@
 				</ul>
 			</section>
 			<section class="product-catalog">
-				<ul>
+				<ul class="list-style">
 					<li class="catalog-item">
 						<div class="photo-item">
 							<img src="img/ice-cream-1.jpg" width="267" height="267" alt="Сливочное мороженое с апельсиновым джемом и цитрусовой стружкой">
@@ -137,7 +152,7 @@
 			</section>
 			<section class="about-us">
 				<h2>Магазин Глэйси — это онлайн- и офлайн-магазин по продаже мороженого собственного производства на развес</h2>
-				<ul class="about-us-list">
+				<ul class="about-us-list list-style">
 					<li>Все наше мороженое изготавливается на собственном производстве, с использованием современного оборудования и проверенных временем технологий.</li>
 					<li>Для приготовления мороженого используются настоящие сливки и молоко высочайшего качества. Все дополнительные ингредиенты и добавки произведены из натурального, экологически чистого сырья</li>
 					<li>Закупка ингредиентов  производится только у проверенных фермерских хозяйств и компаний, с которыми нас связывает долговременное сотрудничество.</li>
@@ -153,12 +168,10 @@
 				<p>Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой ненужной ерунды. Честно =)</p>
 				<form class="mailing-form" action="https://echo.htmlacademy.ru" method="post">
 					<p>
-						<label class="visually-hidden" for="mailing">Электронная почта</label>
-						<input class="mailing" id="mailing" type="text" name="email" placeholder="Электронная почта">
+						<label class="visually-hidden" for="mail">Электронная почта</label>
+						<input class="mail" id="mail" type="text" name="email" placeholder="Электронная почта">
 					</p>
-					<button class="button" type="submit">
-					Отправить
-					</button>
+					<button class="button button-form" type="submit">Отправить</button>
 				</form>
 			</section>
 			<section class="map">
@@ -172,13 +185,13 @@
 					<span class="phone">8 812 450-25-25</span><br>
 					(с 10 до 20 ежедневно)
 					</p>
-					<a class="button form-button" href="#">Форма обратной связи</a>
+					<a class="button feedback-button" href="#">Форма обратной связи</a>
 				</div>
 			</section>
 		</main>
 		<footer>
 			<div class="footer-social">
-				<ul>
+				<ul class="list-style">
 					<li><a class="social-button" href="#">Twitter</a></li>
 					<li><a class="social-button" href="#">Instagram</a></li>
 					<li><a class="social-button" href="#">Facebook</a></li>
@@ -186,7 +199,7 @@
 				</ul>
 				</div>
 				<div class="footer-navigation">
-					<ul>
+					<ul class="list-style">
 						<li><a href="#">Для поставщиков</a></li>
 						<li><a href="#">Наши документы</a></li>
 						<li><a href="#">О производстве</a></li>
@@ -195,7 +208,7 @@
 				</div>
 				<p class="footer-copyright">
 					<a href="https://htmlacademy.ru"><img src="img/logo-htmlacademy.svg" width="108" height="39" alt="Логотип HTML Academy"></a>
-					<span>Сделано в <a href="https://htmlacademy.ru">HTML Academy</a>© 2019</span>
+					Сделано в <a class="copyright-link" href="https://htmlacademy.ru">HTML Academy </a>© 2019</span>
 				</p>
 		</footer>
 			<section class="modal modal-feedback">
@@ -213,7 +226,7 @@
 						<label class="visually-hidden" for="feedback-text">Напишите что-нибудь</label>
 						<textarea class="feedback-text" id="feedback-text" name="text" placeholder="Напишите что-нибудь..."></textarea>
 					</p>
-					<button class="button" type="submit">
+					<button class="button feedback-button" type="submit">
 					Отправить
 					</button>
 				</form>
