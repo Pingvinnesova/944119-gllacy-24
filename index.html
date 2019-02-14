@@ -8,24 +8,26 @@
 		<link href="css/styles.css" rel="stylesheet">
 	</head>
 	<body>
-		<header class="main-header">
+		<header class="main-header container">
 			<nav class="main-navigation">
-				<a class="main-header-logo">
-					<img src="img/logo.svg" width="154" height="64" alt="Логотип магазина мороженого «Глейси»">
-				</a>
-				<ul class="site-navigation list-style">
-					<li><a class="site-navigation-item" href="#">Каталог</a>
-						<ul class="dropdown-menu list-style">
-							<li><a class="dropdown-item" href="#"><b>Новинки</b></a></li>
-							<li><a class="dropdown-item" href="catalog.html">Сливочное</a></li>
-							<li><a class="dropdown-item" href="#">Щербеты</a></li>
-							<li><a class="dropdown-item" href="#">Фруктовый лёд</a></li>
-							<li><a class="dropdown-item" href="#">Мелорин</a></li>
-						</ul>
-					</li>
-					<li><a class="site-navigation-item" href="delivery.html">Доставка и оплата</a></li>
-					<li><a class="site-navigation-item" href="info.html">О Компании</a></li>
-				</ul>
+				<div class="wrapper">
+					<a class="main-header-logo">
+						<img src="img/logo.svg" width="154" height="64" alt="Логотип магазина мороженого «Глейси»">
+					</a>
+					<ul class="site-navigation list-style">
+						<li><a class="site-navigation-item" href="#">Каталог</a>
+							<ul class="dropdown-menu popup list-style">
+								<li><a class="dropdown-item" href="#"><b>Новинки</b></a></li>
+								<li><a class="dropdown-item" href="catalog.html">Сливочное</a></li>
+								<li><a class="dropdown-item" href="#">Щербеты</a></li>
+								<li><a class="dropdown-item" href="#">Фруктовый лёд</a></li>
+								<li><a class="dropdown-item" href="#">Мелорин</a></li>
+							</ul>
+						</li>
+						<li><a class="site-navigation-item" href="delivery.html">Доставка и оплата</a></li>
+						<li><a class="site-navigation-item" href="info.html">О Компании</a></li>
+					</ul>
+				</div>
 				<ul class="user-navigation list-style">
 					<li>
 						<a class="user-link search-link" href="#">Поиск</a>
@@ -71,39 +73,68 @@
 		</header>
 		<main>
 			<h1 class="visually-hidden">Магазин по продаже мороженого «Глейси»</h1>
-			<section class="slider">
+			<section class="slider container">
 				<ul class="list-style">
-					<li class="slide-1">
+					<li class="slide slide-1">
 						<img src="img/slide-1.png" width="1045" height="881" alt="Крем-брюле и пломбир с малиновым джемом">
-						<h2>Крем-брюле и пломбир с малиновым джемом</h2>
-						<a class="button slide-button" href="#">Давайте оба!</a>
-						<li></li>
+						<div class="content-wrapper">
+							<div class="description-wrapper">
+								<h2>Крем-брюле и пломбир с малиновым джемом</h2>
+								<a class="button slide-button" href="#">Давайте оба!</a>
+							</div>
+								<ul class="slides-switches list-style">
+									<li class="slide-radio">
+										<button class="dot">Первый слайд</button>
+									</li>
+									<li class="slide-radio">
+										<button class="dot">Второй слайд</button>
+									</li>
+									<li class="slide-radio">
+										<button class="dot">Третий слайд</button>
+									</li>
+								</ul>
+						</div>
 					</li>
-					<li class="slide-2">
+					<li class="slide slide-2">
 						<img src="img/slide-2.png" width="1065" height="859" alt="Шоколадный пломбир и лимонный сорбет">
-						<h2>Шоколадный пломбир и лимонный сорбет</h2>
-						<a class="button slide-button" href="#">Давайте оба!</a>
+						<div class="description-wrapper">
+							<h2>Шоколадный пломбир и лимонный сорбет</h2>
+							<a class="button slide-button" href="#">Давайте оба!</a>
+							<ul class="slides-switches list-style">
+								<li class="slide-radio">
+									<button class="dot">Первый слайд</button>
+								</li>
+								<li class="slide-radio">
+									<button class="dot">Второй слайд</button>
+								</li>
+								<li class="slide-radio">
+									<button class="dot">Третий слайд</button>
+								</li>
+							</ul>
+						</div>
 					</li>
-					<li class="slide-3">
+					<li class="slide slide-3">
 						<img src="img/slide-3.png" width="1079" height="854" alt="Пломбир с помадкой и клубничный щербет">
-						<h2>Пломбир с помадкой и клубничный щербет</h2>
-						<a class="button slide-button" href="#">Давайте оба!</a>
-					</li>
-				</ul>
-				<ul class="slides-switches list-style">
-					<li class="slide-radio">
-						<button class="dot">Первый слайд</button>
-					</li>
-					<li class="slide-radio">
-						<button class="dot">Второй слайд</button>
-					</li>
-					<li class="slide-radio">
-						<button class="dot">Третий слайд</button>
+						<div class="description-wrapper">
+							<h2>Пломбир с помадкой и клубничный щербет</h2>
+							<a class="button slide-button" href="#">Давайте оба!</a>
+							<ul class="slides-switches list-style">
+								<li class="slide-radio">
+									<button class="dot">Первый слайд</button>
+								</li>
+								<li class="slide-radio">
+									<button class="dot">Второй слайд</button>
+								</li>
+								<li class="slide-radio">
+									<button class="dot">Третий слайд</button>
+								</li>
+							</ul>
+						</div>
 					</li>
 				</ul>
 			</section>
-			<section class="promo">
-				<ul class="list-style">
+			<section class="promo container">
+				<ul class="promo-items list-style">
 					<li class="rasberries">
 						<h2>Малинки даром!</h2>
 						<p>При покупке 2 кг любого фруктового мороженого, добавим в ваш заказ банку малинового варенья бесплатно.</p>
@@ -116,8 +147,8 @@
 					</li>
 				</ul>
 			</section>
-			<section class="product-catalog">
-				<ul class="list-style">
+			<section class="product-catalog container">
+				<ul class="list-style catalog-items">
 					<li class="catalog-item">
 						<div class="photo-item">
 							<img src="img/ice-cream-1.jpg" width="267" height="267" alt="Сливочное мороженое с апельсиновым джемом и цитрусовой стружкой">
@@ -148,9 +179,19 @@
 						<h2><a class="item-description" href="#">Сливочно-клубничное с присыпкой и белого шоколада</a></h2>
 						<a class="button catalog-button" href="">Быстрый просмотр</a>
 					</li>
+					<li class="catalog-item">
+						<div class="photo-item">
+							<img src="img/ice-cream-4.jpg" width="267" height="267" alt="Сливочное крем-брюле с карамельной подливкой">
+						</div>
+						<p class="product-price">
+							<b>415 ₽<span>/кг</span></b>
+						</p>
+						<h2><a class="item-description" href="#">Сливочное крем-брюле с карамельной подливкой</a></h2>
+						<a class="button catalog-button" href="">Быстрый просмотр</a>
+					</li>	
 				</ul>
 			</section>
-			<section class="about-us">
+			<section class="about-us container">
 				<h2>Магазин Глэйси — это онлайн- и офлайн-магазин по продаже мороженого собственного производства на развес</h2>
 				<ul class="about-us-list list-style">
 					<li>Все наше мороженое изготавливается на собственном производстве, с использованием современного оборудования и проверенных временем технологий.</li>
@@ -159,37 +200,41 @@
 					<li>Доставка нашего мороженого до заказчиков осуществляется в специальном термопаке, который не дает мороженому растаять в пути и позволяет сохранить превосходный вкус.</li>
 				</ul>
 			</section>
-			<article class="blog-news">
-				<h2>Новое в нашем блоге</h2>
-				<b><a href="#">10 способов сервировки фруктовых щербетов к столу</a></b>
-			</article>
-			<section class="mailing">
-				<h2 class="visually-hidden">Полезная рассылка</h2>
-				<p>Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой ненужной ерунды. Честно =)</p>
-				<form class="mailing-form" action="https://echo.htmlacademy.ru" method="post">
-					<p>
-						<label class="visually-hidden" for="mail">Электронная почта</label>
-						<input class="mail" id="mail" type="text" name="email" placeholder="Электронная почта">
-					</p>
-					<button class="button button-form" type="submit">Отправить</button>
-				</form>
-			</section>
+			<div class="container news-and-mail">
+				<article class="blog-news">
+					<h2>Новое в нашем блоге</h2>
+					<b><a href="#">10 способов сервировки фруктовых щербетов к столу</a></b>
+				</article>
+				<section class="mailing">
+					<h2 class="visually-hidden">Полезная рассылка</h2>
+					<p>Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой ненужной ерунды. Честно =)</p>
+					<form class="mailing-form" action="https://echo.htmlacademy.ru" method="post">
+						<p>
+							<label class="visually-hidden" for="mail">Электронная почта</label>
+							<input class="mail" id="mail" type="text" name="email" placeholder="Электронная почта">
+						</p>
+						<button class="button button-form" type="submit">Отправить</button>
+					</form>
+				</section>
+			</div>
 			<section class="map">
 				<h2 class="visually-hidden">Карта</h2>
 				<img src="img/map.jpg" alt="Карта магазина по адресу улица Большая Конюшенная 19/8, Санкт-Петербург">
-				<div class="contacts">
-					<p>Адрес главного офиса<br>
-					и офлайн-магазина:<br>
-					<span class="adress">ул. Большая Конюшенная 19/8, Санкт-Петербург</span><br>
-					Для заказов по телефону:<br>
-					<span class="phone">8 812 450-25-25</span><br>
-					(с 10 до 20 ежедневно)
-					</p>
-					<a class="button feedback-button" href="#">Форма обратной связи</a>
+				<div class="contacts-wrapper container">
+					<div class="contacts">
+						<p>Адрес главного офиса<br>
+							и офлайн-магазина:<br>
+						<span class="adress">ул. Большая Конюшенная 19/8, Санкт-Петербург</span><br>
+							Для заказов по телефону:<br>
+						<span class="phone">8 812 450-25-25</span><br>
+							(с 10 до 20 ежедневно)
+						</p>
+						<a class="button feedback-button" href="#">Форма обратной связи</a>
+					</div>
 				</div>
 			</section>
 		</main>
-		<footer>
+		<footer class="main-footer container">
 			<div class="footer-social">
 				<ul class="list-style">
 					<li><a class="social-button" href="#">Twitter</a></li>
