@@ -698,6 +698,7 @@ a.dropdown-item:active {
 
 p.sum {
   padding: 15px 0px;
+  padding-bottom: 60px;
   font-size: 15px;
   line-height: 18px;
   font-weight: 700;
@@ -716,6 +717,9 @@ p.sum {
 }
 
 .button-order {
+  position: absolute;
+  right: 15px;
+  bottom: 21px;
   display: inline-block;
   padding: 10px 14px;
   margin-left: auto;
@@ -922,11 +926,8 @@ a.breadcrumb-current {
 /*Кнопка*/
 
 .button {
-  background: #f26843;
-  background: -webkit-gradient(linear, left top, left bottom, from(#f26843), to(#e74a35));
-  background: -webkit-linear-gradient(top, #f26843 0%, #e74a35 100%);
-  background: -o-linear-gradient(top, #f26843 0%, #e74a35 100%);
-  background: linear-gradient(to bottom, #f26843 0%, #e74a35 100%);
+  background-color: #f26843;
+  background-image: linear-gradient(to bottom, #f26843 0%, #e74a35 100%);
   -webkit-box-shadow: 0 2px 2px rgba(172, 16, 0, 0.64);
           box-shadow: 0 2px 2px rgba(172, 16, 0, 0.64);
   text-decoration: none;
@@ -992,7 +993,7 @@ a.breadcrumb-current {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  margin-bottom: 17px;
+  margin-bottom: 14px;
   font-size: 16px;
   line-height: 18px;
   font-weight: 500;
@@ -1010,7 +1011,7 @@ a.breadcrumb-current {
 
 .filter fieldset {
   margin-right: 15px;
-  margin-bottom: 15px;
+  margin-bottom: 17px;
   border: none;
 }
 
@@ -1048,6 +1049,11 @@ a.breadcrumb-current {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  border: none;
+}
+
+select::-ms-expand {
+    display: none;
 }
 
 .filter .sorting:hover,
@@ -1202,16 +1208,15 @@ a.breadcrumb-current {
 /*Наполнители*/
 
 .filter .filling-list {
-  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 0;
-  padding-top: 11px;
+  padding-top: 8px;
   padding-bottom: 2px;
-  padding-left: 16px;
+  padding-left: 13px;
   padding-right: 18px;
   margin: 0;
   height: 37px;
@@ -1220,10 +1225,16 @@ a.breadcrumb-current {
   border-radius: 20px;
 }
 
+.filling-list li {
+  padding-left: 3px;
+  padding-top: 3px;
+}
+
 .filter-option label {
+  position: relative;
   cursor: pointer;
   padding-left: 32px;
-  padding-right: 20px;
+  padding-right: 17px;
   padding-top: 2px;
   padding-bottom: 2px;
 }
@@ -1236,88 +1247,49 @@ a.breadcrumb-current {
   padding-right: 0px;
 }
 
-.filter-option .filling-item::before {
+.filter-option input + label::before {
   content: "";
   position: absolute;
-  top: 0;
-  opacity: 0.8;
-}
-
-.filling-list input + label {
+  top: 1px;
+  left: 0;
   width: 20px;
   height: 20px;
+  z-index: -1;
   background-image: url("../img/checkbox-off.svg");
   background-repeat: no-repeat;
   background-position: 0 0;
+  opacity: 0.8;
 }
 
-.filling-list input + label:hover {
-  width: 20px;
-  height: 20px;
-  background-image: url("../img/checkbox-off-1.svg");
-  background-repeat: no-repeat;
-  background-position: 0 0;
-}
-
-.filling-list input:disabled + label:hover {
-  width: 20px;
-  height: 20px;
-  background-image: url("../img/checkbox-off-dis.svg");
-  background-repeat: no-repeat;
-  background-position: 0 0;
-}
-
-.filling-list input:checked + label {
+.filter-option input:checked + label::before {
   width: 24px;
   height: 20px;
+  z-index: -1;
   background-image: url("../img/checkbox-on.svg");
   background-repeat: no-repeat;
   background-position: 0 0;
+  opacity: 0.8;
 }
 
-.filling-list input:checked:disabled + label {
-  width: 24px;
-  height: 20px;
-  background-image: url("../img/checkbox-on-dis.svg");
-  background-repeat: no-repeat;
-  background-position: 0 0;
+.filter-option input:disabled + label::before {
+  opacity: 0.4;
 }
 
-.filling-list input:checked + label:hover {
-  width: 24px;
-  height: 20px;
-  background-image: url("../img/checkbox-on-1.svg");
-  background-repeat: no-repeat;
-  background-position: 0 0;
-}
-
-
-/*.fat-list label:hover::before,
-.fat-list label:focus::before,
-.fat-list label:active::before {
+.filter-option label:hover::before,
+.filter-option label:focus::before,
+.filter-option label:active::before {
   opacity: 1;
 }
 
-.fat-list input:checked + label:hover::before,
-.fat-list input:checked + label:focus::before,
-.fat-list input:checked + label:active::before {
+.filter-option input:checked + label:hover::before,
+.filter-option input:checked + label:focus::before,
+.filter-option input:checked + label:active::before {
   opacity: 1;
-}*/
-
-
-
-
-
-.filter-option .filling-item::before {
-  content: "";
-  position: relative;
 }
 
-.choco:hover,
-.sugar:hover,
-.fruits:hover,
-.cyrup:hover,
-.jam:hover {
+.filter-option label:hover,
+.filter-option label:focus,
+.filter-option label:active {
   color: #323232;
 }
 
@@ -1328,7 +1300,7 @@ a.breadcrumb-current {
           box-sizing: border-box;
   min-width: 144px;
   height: 37px;
-  margin-bottom: 15px;
+  margin-bottom: 17px;
   margin-top: 0;
   cursor: pointer;
   font: inherit;
@@ -1380,11 +1352,10 @@ a.breadcrumb-current {
   width: 560px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  min-height: 229px;
   padding-left: 19px;
   padding-top: 17px;
   padding-right: 21px;
-  padding-bottom: 24px;
+  padding-bottom: 82px;
   margin-bottom: 31px;
   color: #ffffff;
   border-radius: 15px;
@@ -1394,11 +1365,14 @@ a.breadcrumb-current {
 }
 
 .rasberries {
+  position: relative;
   background-color: #0f0103;
   background-image: url("../img/raspberries-background.jpg");
+  margin-right: 26px;
 }
 
 .chocolate {
+  position: relative;
   background-color: #180a05;
   background-image: url("../img/chocolate-background.jpg");
 }
@@ -1407,13 +1381,10 @@ a.breadcrumb-current {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
 }
 
 .promo p {
-  margin-bottom: 5px;
+  padding-bottom: 31px;
   font-size: 18px;
   line-height: 22px;
   font-weight: 700;
@@ -1422,10 +1393,13 @@ a.breadcrumb-current {
 }
 
 .promo-button {
+  position: absolute;
+  right: 21px;
+  bottom: 23px;
   display: inline-block;
   padding: 11px 22px;
   margin-left: auto;
-  margin-top: auto;
+  margin-top: 44px;
   font-size: 18px;
   line-height: 24px;
   font-weight: 700;
@@ -1556,7 +1530,7 @@ a.breadcrumb-current {
 .catalog-item-inner h2 {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  max-width: 258px;
+  max-width: 267px;
 }
 
 .catalog-item b,
@@ -1632,7 +1606,7 @@ a.breadcrumb-current {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   width: 1146px;
-  padding: 25px 15px 3px 21px;
+  padding: 25px 15px 24px 21px;
   margin-top: 8px;
   margin-bottom: 40px;
   color: #323232;
@@ -1647,7 +1621,6 @@ a.breadcrumb-current {
 .about-us h2 {
   padding: 0;
   margin: 0;
-  margin-bottom: 21px;
   font-size: 24px;
   line-height: 30px;
   font-weight: 500;
@@ -1670,9 +1643,7 @@ a.breadcrumb-current {
 
 .about-us li {
   width: 487px;
-  padding: 0;
-  padding-left: 55px;
-  padding-bottom: 22px;
+  padding-left: 56px;
   font-size: 16px;
   line-height: 22px;
   font-weight: 400;
@@ -1681,29 +1652,33 @@ a.breadcrumb-current {
 }
 
 .about-us-list li:first-of-type {
+  padding-top: 22px;
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
           order: 1;
 }
 
 .about-us-list li:nth-of-type(2) {
+  padding-top: 22px;
   -webkit-box-ordinal-group: 4;
       -ms-flex-order: 3;
           order: 3;
 }
 
 .about-us-list li:nth-of-type(3) {
+  padding-top: 22px;
   -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;
           order: 2;
-  margin-left: 25px;
+  margin-left: 23px;
 }
 
 .about-us-list li:last-of-type {
+  padding-top: 22px;
   -webkit-box-ordinal-group: 5;
       -ms-flex-order: 4;
           order: 4;
-  margin-left: 25px;
+  margin-left: 23px;
 }
 
 .about-us-list li::before {
@@ -1714,7 +1689,7 @@ a.breadcrumb-current {
 }
 
 .about-us-list li:first-of-type::before {
-  top: -14px;
+  top: 9px;
   left: 0px;
   background-image: url("../img/ice-cream.svg");
   background-repeat: no-repeat;
@@ -1722,7 +1697,7 @@ a.breadcrumb-current {
 }
 
 .about-us-list li:nth-of-type(2)::before {
-  top: -14px;
+  top: 9px;
   right: 497px;
   background-image: url("../img/cow.svg");
   background-repeat: no-repeat;
@@ -1730,7 +1705,7 @@ a.breadcrumb-current {
 }
 
 .about-us-list li:nth-of-type(3)::before {
-  bottom: 74px;
+  bottom: 52px;
   left: 0px;
   background-image: url("../img/eco.svg");
   background-repeat: no-repeat;
@@ -1738,7 +1713,7 @@ a.breadcrumb-current {
 }
 
 .about-us-list li:last-of-type::before {
-  bottom: 74px;
+  bottom: 52px;
   right: 497px;
   background-image: url("../img/thermometer.svg");
   background-repeat: no-repeat;
@@ -1893,21 +1868,20 @@ a.breadcrumb-current {
 
 /*Карта*/
 
-.map {
-  position: relative;
-}
-
-.map img {
+.photo-map {
+  height: 430px;
   width: 100%;
+  background-image: url("../img/map-all.jpg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
 }
 
 .contacts {
-  position: absolute;
-  top: 60px;
-  min-height: 305px;
+  height: 305px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 30px 26px;
+  margin-top: 62px;
 }
 
 .contacts p {
@@ -1947,13 +1921,12 @@ a.breadcrumb-current {
 
 .feedback-button {
   padding: 13px 27px;
+  border: none;
   border-radius: 20px;
   font-size: 18px;
   line-height: 24px;
   font-weight: 700;
   color: #ffffff;
-  vertical-align: middle;
-  text-align: center;
 }
 
 /*Нумерация страниц*/
@@ -2094,10 +2067,13 @@ a.breadcrumb-current {
   fill: #e6ebe9;
 }
 
-.social-button:hover,
+.social-button:hover {
+  border: solid 3px rgba(255, 255, 255, 0.5);
+}
+
 .social-button:focus,
 .social-button:active {
-  border: solid 3px rgba(255, 255, 255, 0.5);
+  border: solid 3px rgba(255, 255, 255, 0.7);
 }
 
 .social-button:hover path {
@@ -2161,24 +2137,6 @@ a.breadcrumb-current {
 
 /*Копирайт*/
 
-.footer-copyright {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  font-size: 12px;
-  line-height: 18px;
-  font-weight: 400;
-  color: white;
-}
-
-.footer-copyright-link {
-  margin-left: 2px;
-}
-
 .main-footer,
 .main-footer-inner {
   display: -webkit-box;
@@ -2190,6 +2148,32 @@ a.breadcrumb-current {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.footer-copyright {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 18px;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 400;
+  color: white;
+}
+
+.footer-copyright-link {
+  height: 39px;
+  margin-left: 2px;
+}
+
+.footer-copyright span {
+  padding: 0;
+  margin: 0;
+  margin-top: 2px;
 }
 
 a.company-copyright-link {
@@ -2343,7 +2327,7 @@ a.company-copyright-link:active::after {
 
 .modal-feedback-button {
   padding: 8px 22px;
-  margin-left: auto;
+  margin-left: 290px;
   font-size: 18px;
   line-height: 24px;
   font-weight: 700;
