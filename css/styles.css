@@ -1,6 +1,13 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
 body {
   margin: 0;
   padding: 0;
+  height: 100%;
   font-family: 'Roboto', Arial, sans-serif;
   font-size: 16px;
   line-height: 22px;
@@ -61,6 +68,15 @@ img {
   background: linear-gradient(#ffffff, #849d8f);
   opacity: 0.2;
   z-index: -2;
+}
+
+.background-wrapper {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 30;
 }
 
 .main-header-logo {
@@ -280,7 +296,7 @@ a.dropdown-item:active {
   position: relative;
 }
 
-.user-navigation .modal-search {
+.modal-search {
   position: absolute;
   top: 30px;
   display: none;
@@ -296,13 +312,45 @@ a.dropdown-item:active {
   -webkit-box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.4);
           box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.4);
 }
+/*
+@keyframes search-bounce {
+  0% { transform: translateY(-2000px); }
+70% { transform: translateY(30px); }
+90% { transform: translateY(-10px); }
+100% { transform: translateY(0); }
+}*/
+
+.modal-search-show {
+  display: block;
+/*  animation-name: search-bounce;
+  animation-duration: 0.6s;*/
+}
+
+@-webkit-keyframes search-shake {
+  0%, 100% { -webkit-transform: translateX(0); transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { -webkit-transform: translateX(-10px); transform: translateX(-10px); }
+  20%, 40%, 60%, 80% { -webkit-transform: translateX(10px); transform: translateX(10px); }
+}
+
+@keyframes search-shake {
+  0%, 100% { -webkit-transform: translateX(0); transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { -webkit-transform: translateX(-10px); transform: translateX(-10px); }
+  20%, 40%, 60%, 80% { -webkit-transform: translateX(10px); transform: translateX(10px); }
+}
+
+.modal-search-error {
+  -webkit-animation-name: search-shake;
+          animation-name: search-shake;
+  -webkit-animation-duration: 0.6s;
+          animation-duration: 0.6s;
+}
 
 .modal p {
   margin: 0;
   padding: 0;
 }
 
-.user-navigation .modal-login {
+.modal-login {
   position: absolute;
   top: 30px;
   display: none;
@@ -319,11 +367,34 @@ a.dropdown-item:active {
   z-index: 10;
 }
 
-.user-navigation > li:hover .modal-login,
+.modal-login-show {
+  display: block;
+}
+
+@-webkit-keyframes login-shake {
+  0%, 100% { -webkit-transform: translateX(0); transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { -webkit-transform: translateX(-10px); transform: translateX(-10px); }
+  20%, 40%, 60%, 80% { -webkit-transform: translateX(10px); transform: translateX(10px); }
+}
+
+@keyframes login-shake {
+  0%, 100% { -webkit-transform: translateX(0); transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { -webkit-transform: translateX(-10px); transform: translateX(-10px); }
+  20%, 40%, 60%, 80% { -webkit-transform: translateX(10px); transform: translateX(10px); }
+}
+
+.modal-login-error {
+  -webkit-animation-name: login-shake;
+          animation-name: login-shake;
+  -webkit-animation-duration: 0.6s;
+          animation-duration: 0.6s;
+}
+
+/*.user-navigation > li:hover .modal-login,
 .user-navigation > li:focus .modal-login,
 .user-navigation > li:active .modal-login   {
   display: block;
-}
+}*/
 
 .entrance-form {
   padding-top: 2px;
@@ -374,11 +445,11 @@ a.dropdown-item:active {
   border-bottom: none;
 }
 
-.user-navigation > li:hover .modal-search,
+/*.user-navigation > li:hover .modal-search,
 .user-navigation > li:focus .modal-search,
 .user-navigation > li:active .modal-search {
   display: block;
-}
+}*/
 
 .user-link {
   font-size: 14px;
@@ -927,6 +998,9 @@ a.breadcrumb-current {
 
 .button {
   background-color: #f26843;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f26843), to(#e74a35));
+  background-image: -webkit-linear-gradient(top, #f26843 0%, #e74a35 100%);
+  background-image: -o-linear-gradient(top, #f26843 0%, #e74a35 100%);
   background-image: linear-gradient(to bottom, #f26843 0%, #e74a35 100%);
   -webkit-box-shadow: 0 2px 2px rgba(172, 16, 0, 0.64);
           box-shadow: 0 2px 2px rgba(172, 16, 0, 0.64);
@@ -1868,6 +1942,10 @@ select::-ms-expand {
 
 /*Карта*/
 
+.contacts-wrapper {
+  position: relative;
+} 
+
 .photo-map {
   height: 430px;
   width: 100%;
@@ -1877,11 +1955,13 @@ select::-ms-expand {
 }
 
 .contacts {
+  position: absolute;
+  bottom: 62px;
+  right: 0;
   height: 305px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 30px 26px;
-  margin-top: 62px;
 }
 
 .contacts p {
@@ -1920,9 +2000,9 @@ select::-ms-expand {
 }
 
 .feedback-button {
-  padding: 13px 27px;
+  padding: 11px 27px;
   border: none;
-  border-radius: 20px;
+  border-radius: 30px;
   font-size: 18px;
   line-height: 24px;
   font-weight: 700;
@@ -2231,13 +2311,32 @@ a.company-copyright-link:active::after {
   border-radius: 6px;
   -webkit-box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.4);
           box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.4);
+  z-index: 40;
 }
 
-.button.feedback-button:active .modal-feedback {
+@-webkit-keyframes bounce {
+  0% {-webkit-transform: translate(-50%, -2000px);transform: translate(-50%, -2000px);}
+  80% {-webkit-transform: translate(-50%, -30%);transform: translate(-50%, -30%);}
+  100% {-webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);}
+}
+
+@keyframes bounce {
+  0% {-webkit-transform: translate(-50%, -2000px);transform: translate(-50%, -2000px);}
+  80% {-webkit-transform: translate(-50%, -30%);transform: translate(-50%, -30%);}
+  100% {-webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);}
+}
+
+
+.modal-feedback-show {
   display: block;
+  -webkit-animation-name: bounce;
+          animation-name: bounce;
+  -webkit-animation-duration: 0.6s;
+          animation-duration: 0.6s;
+
 }
 
-.modal-close {
+.modal-feedback-close {
   padding: 0;
   margin: 0;
   position: absolute;
@@ -2251,6 +2350,25 @@ a.company-copyright-link:active::after {
   background-color: transparent;
   border: none;
   cursor: pointer;
+}
+
+@-webkit-keyframes shake {
+  0%, 100% { -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%); }
+ 10%, 30%, 50%, 70%, 90% { -webkit-transform: translate(-52%, -50%); transform: translate(-52%, -50%); }
+ 20%, 40%, 60%, 80% { -webkit-transform: translate(-48%, -50%); transform: translate(-48%, -50%); } 
+}
+
+@keyframes shake {
+  0%, 100% { -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%); }
+ 10%, 30%, 50%, 70%, 90% { -webkit-transform: translate(-52%, -50%); transform: translate(-52%, -50%); }
+ 20%, 40%, 60%, 80% { -webkit-transform: translate(-48%, -50%); transform: translate(-48%, -50%); } 
+}
+
+.modal-feedback-error {
+  -webkit-animation-name: shake;
+          animation-name: shake;
+  -webkit-animation-duration: 0.6s;
+          animation-duration: 0.6s;
 }
 
 .modal-feedback p,
