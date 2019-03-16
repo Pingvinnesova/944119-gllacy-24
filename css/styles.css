@@ -2003,6 +2003,11 @@ select::-ms-expand {
     background-position: 50% 50%;
 }
 
+.photo-map iframe {
+    width: 100%;
+    border: 0;
+}
+
 .contacts {
     position: absolute;
     bottom: 62px;
