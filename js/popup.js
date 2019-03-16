@@ -46,16 +46,15 @@ modalFeedbackClose.addEventListener("click", function(evt) {
 
 feedbackForm.addEventListener("submit", function(evt) {
 	if (!feedbackName.value || !feedbackEmail.value || !feedbackText.value) {
-	evt.preventDefault();
-	modalFeedback.classList.remove("modal-feedback-error");	
-	modalFeedback.offsetWidth = modalFeedback.offsetWidth;
-	modalFeedback.classList.add("modal-feedback-error");
+		evt.preventDefault();
+		modalFeedback.classList.remove("modal-feedback-error");	
+		modalFeedback.offsetWidth = modalFeedback.offsetWidth;
+		modalFeedback.classList.add("modal-feedback-error");
 	} else {
 		if (isStorageSupport) {
 			localStorage.setItem("feedbackName", feedbackName.value);
 		}
 	}
-
 });
 
 window.addEventListener("keydown", function(evt) {
@@ -88,12 +87,12 @@ modalSearch.addEventListener("mouseover", function(evt) {
 modalSearch.addEventListener("keydown", function(evt) {
 	if (!searchInput.value) {
 		if (evt.keyCode === 13) {
-	evt.preventDefault();
-	modalSearch.classList.remove("modal-search-error");	
-	modalSearch.offsetWidth = modalSearch.offsetWidth;
-	modalSearch.classList.add("modal-search-error");
-	} 
-}
+			evt.preventDefault();
+			modalSearch.classList.remove("modal-search-error");	
+			modalSearch.offsetWidth = modalSearch.offsetWidth;
+			modalSearch.classList.add("modal-search-error");
+		} 
+	}
 });
 
 modalSearch.addEventListener("mouseout", function(evt) {
@@ -130,10 +129,10 @@ modalLogin.addEventListener("mouseover", function(evt) {
 
 loginForm.addEventListener("submit", function(evt) {
 	if (!entranceEmail.value || !entrancePassword.value) {
-	evt.preventDefault();
-	modalLogin.classList.remove("modal-login-error");	
-	modalLogin.offsetWidth = modalLogin.offsetWidth;
-	modalLogin.classList.add("modal-login-error");
+		evt.preventDefault();
+		modalLogin.classList.remove("modal-login-error");	
+		modalLogin.offsetWidth = modalLogin.offsetWidth;
+		modalLogin.classList.add("modal-login-error");
 	}
 });
 
